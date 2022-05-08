@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Game Mania</title>
+    <link rel="icon" href="images/Logo Game Mania 2.png" type="image/png" size="16x16">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS Incorporado -->
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+    </style>
+    <script>
+        function load() {
+            produto1 = document.getElementById('produtohtml1').innerHTML
+            produto2 = document.getElementById('produtohtml2').innerHTML
+            
+            document.getElementById('c0101_linha1_item1').innerHTML = produto1
+            document.getElementById('c0101_linha1_item2').innerHTML = produto2
+            document.getElementById('c0101_linha1_item3').innerHTML = produto1
+            document.getElementById('c0101_linha1_item4').innerHTML = produto2
+
+            document.getElementById('c0101_linha2_item1').innerHTML = produto1
+            document.getElementById('c0101_linha2_item2').innerHTML = produto2
+            document.getElementById('c0101_linha2_item3').innerHTML = produto1
+            document.getElementById('c0101_linha2_item4').innerHTML = produto2
+
+            document.getElementById('c0101_linha3_item1').innerHTML = produto1
+            document.getElementById('c0101_linha3_item2').innerHTML = produto2
+            document.getElementById('c0101_linha3_item3').innerHTML = produto1
+            document.getElementById('c0101_linha3_item4').innerHTML = produto2
+            /* CAROUSEL 2 */
+
+            document.getElementById('c0201_linha1_item1').innerHTML = produto1
+            document.getElementById('c0201_linha1_item2').innerHTML = produto2
+            document.getElementById('c0201_linha1_item3').innerHTML = produto1
+            document.getElementById('c0201_linha1_item4').innerHTML = produto2
+
+            document.getElementById('c0201_linha2_item1').innerHTML = produto1
+            document.getElementById('c0201_linha2_item2').innerHTML = produto2
+            document.getElementById('c0201_linha2_item3').innerHTML = produto1
+            document.getElementById('c0201_linha2_item4').innerHTML = produto2
+
+            document.getElementById('c0201_linha3_item1').innerHTML = produto1
+            document.getElementById('c0201_linha3_item2').innerHTML = produto2
+            document.getElementById('c0201_linha3_item3').innerHTML = produto1
+            document.getElementById('c0201_linha3_item4').innerHTML = produto2
+
+            // for every slide in carousel, copy the next slide's item in the slide.
+            // Do the same for the next, next item.
+            let items1 = document.querySelectorAll('#carProdutos_01_01 .carousel .carousel-item');
+
+            items1.forEach((el) => {
+                const minPerSlide = 4
+                let next = el.nextElementSibling
+                for (var i=1; i<minPerSlide; i++) {
+                    if (!next) {
+                        // wrap carousel by using first child
+                        next = items1[0]
+                    }
+                    let cloneChild = next.cloneNode(true)
+                    el.appendChild(cloneChild.children[0])
+                    next = next.nextElementSibling
+                }
+            })
+
+            // for every slide in carousel, copy the next slide's item in the slide.
+            // Do the same for the next, next item.
+            let items2 = document.querySelectorAll('#carProdutos_02_01 .carousel .carousel-item');
+
+            items2.forEach((el) => {
+                const minPerSlide = 4
+                let next = el.nextElementSibling
+                for (var i=1; i<minPerSlide; i++) {
+                    if (!next) {
+                        // wrap carousel by using first child
+                        next = items2[0]
+                    }
+                    let cloneChild = next.cloneNode(true)
+                    el.appendChild(cloneChild.children[0])
+                    next = next.nextElementSibling
+                }
+            })
+        }
+        window.onload = load;
+    </script>
+</head>
+<body>
+    <!-- HEADER INICIO -->
+    <header class="container">
+        <div class="row cabecalho">
+            <div class="col-3 left">
+                <div class="input-group input-group-sm mb-0">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="pesquisa"><img class="lupa_pesquisa" src="images/Lupa Pesquisa.png"></span>
+                    </div>
+                    <input type="text" class="form-control" id="pesquisa" placeholder="pesquise aqui..." aria-label="Pesquisa" aria-describedby="pesquisa" onfocus="this.value='';" onblur="this.value='';">
+                </div>
+            </div>
+            <div class="col-6 center">
+               <a href="index.html"><img id="img_logo" src="images/Logo Game Mania 2.png" alt="Logotipo da aplicação Game Mania"></a>
+            </div>
+            <div class="col-3 right">
+                <a href="index.html"><img class="botoes_naveg" src="images/Botao Home.png" alt=""></a>
+                <a href="login.html"><img class="botoes_naveg" src="images/Botao Usuario.png" alt=""></a>
+                <a href="#"><img class="botoes_naveg" src="images/Botao Carrinho.png" alt=""></a>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER FIM -->
+
+    <!-- MENU INICIO -->
+    <section id="menubar" class="container d-flex justify-content-center align-items-center menu shadow">
+        <div id="div_pesquisa">
+            <div class="input-group input-group-sm mb-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="pesquisa"><img class="lupa_pesquisa" src="images/Lupa Pesquisa.png"></span>
+                </div>
+                <input type="text" class="form-control" id="pesquisa" placeholder="pesquise aqui..." aria-label="Pesquisa" aria-describedby="pesquisa" onfocus="this.value='';" onblur="this.value='';">
+            </div>
+        </div>
+        <div id="div_menubar" class="d-flex justify-content-center">
+            <nav id="navbar">
+                <a href="#">Games</a>
+                <a href="#">Console</a>
+                <a href="#">Notebooks</a>
+                <a href="#">Desktops</a>                
+                <a href="#">Celulares</a>
+                <a href="#">Tablets</a>
+                <a href="#">Acessórios</a>
+            </nav>
+        </div>
+        <div id="div_navbar" class="d-flex justify-content-end">            
+            <a href="#" onclick="AbreMenu()">
+                <div id="menubutton" class="d-flex justify-content-end">            
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- MENU FIM -->
+
+    <!-- BANNER INICIO -->
+    <section class="container d-flex justify-content-center align-items-center banner">
+    </section>
+    <!-- BANNER FIM -->
+
+    <div id="produtohtml1" style="display: none;">
+        <a href="login.html">
+        <div class="container-fluig produto_item">
+            <div class="dados_produto produto_item">
+                <div class="branco_produto">
+                    <span>-</span>
+                </div>
+                <div class="imagem_produto_item1">
+                </div>  
+                <div class="nome_produto">
+                    <span>jogo Supercross 4 para Xbox</span>
+                </div>
+                <div class="branco_produto">
+                    <span>-</span>
+                </div>
+                <div class="valor_anterior">
+                    <span>R$ 199,00</span>
+                </div>
+                <div class="valor_novo">
+                    <span>R$ 179,00</span>
+                </div>
+                <div class="parcelamento">
+                    <span>em 1x no cartão de crédito</span>
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
+
+    <div id="produtohtml2" style="display: none;">
+        <div class="container-fluig produto_item">
+            <div class="dados_produto produto_item">
+                <div class="branco_produto">
+                    <span>-</span>
+                </div>
+                <div class="imagem_produto_item2">
+                </div>  
+                <div class="nome_produto">
+                    <span>jogo Samurai Shodown para Xbox One</span>
+                </div>
+                <div class="branco_produto">
+                    <span>-</span>
+                </div>
+                <div class="valor_anterior">
+                    <span>R$ 199,00</span>
+                </div>
+                <div class="valor_novo">
+                    <span>R$ 179,00</span>
+                </div>
+                <div class="parcelamento">
+                    <span>em 1x no cartão de crédito</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PRODUTO INICIO -->
+    <section id="carProdutos_01_01" class="container produto">
+        <div id="carouselExampleControls_01_01" class="carousel slide multi-item-carousel h-100" data-bs-ride="carousel"  data-bs-interval="0">
+            <div class="carousel-inner" role="listbox">
+                <div class="linha_carousel carousel-item active">
+                    <div class="produto_left" id="c0101_linha1_item1"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha1_item2"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha1_item3"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha1_item4"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha2_item1"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha2_item2"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha2_item3"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha2_item4"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha3_item1"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha3_item2"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha3_item3"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0101_linha3_item4"></div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls_01_01" data-bs-slide="prev">                
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls_01_01" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </button>
+        </div>
+    </section>    
+
+    <section id="carProdutos_02_01" class="container produto">
+        <div id="carouselExampleControls_02_01" class="carousel slide h-100" data-bs-ride="carousel"  data-bs-interval="0">
+            <div class="carousel-inner">
+                <div class="linha_carousel carousel-item active">
+                    <div class="produto_left" id="c0201_linha1_item1"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha1_item2"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha1_item3"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha1_item4"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha2_item1"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha2_item2"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha2_item3"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha2_item4"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha3_item1"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha3_item2"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha3_item3"></div>
+                </div>
+                <div class="linha_carousel carousel-item">
+                    <div class="produto_left" id="c0201_linha3_item4"></div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls_02_01" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls_02_01" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </button>
+        </div>
+    </section>  
+    <!-- PRODUTO FIM -->
+
+    <!-- PROPAGANDA INICIO -->
+    <section class="container d-flex justify-content-center propaganda">
+        <div class="d-flex flex-column align-items-center justify-content-center w-100 texto_propaganda">
+            <div class="d-flex align-items-end justify-content-center h-60 m-bottom-20" id="txt_nome_propaganda">
+                <span>Na Game Mania você encontra o que há de mais novo no mundo dos games, além notebooks, desktops e muito mais!</span>
+            </div>
+            <div class="d-flex align-items-top justify-content-center h-40 m-top-20">
+                <button id="button_confira" type="button" class="btn btn-warning">CONFIRA AQUI</button>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center w-100 imagem_propaganda">
+            <img class="img_propaganda" src="images/Fundo 1.jpg">
+            <div class="imagem_propaganda_transparencia">
+            </div>            
+            <!--
+            <div class="d-flex align-items-center justify-content-center img_propaganda">
+            </div>            
+            -->
+        </div>
+    </section>
+    <!-- PROPAGANDA FIM -->
+
+    <!-- RODAPE INICIO -->
+    <section class="container justify-content-center rodape">
+        <div class="rodape_col_row" style="width:100%;">
+            <div class="rodape_atendimento flex-column">
+                <div class="rodape_tamanho_atendimento"></div>
+                <div class="rodape_atendimento_alinhamento align-items-center rodape_tamanho_atendimento">
+                    <span class="txt_branco_xl">Atendimento</span>
+                </div>
+                <div class="rodape_atendimento_alinhamento align-items-center rodape_tamanho_atendimento">
+                    <span class="txt_branco_sm">(21) 99999-9999</span>
+                </div>
+                <div class="rodape_tamanho_atendimento"></div>
+                <div id="div_quebra" class="rodape_tamanho_atendimento"></div>
+            </div>
+            <div class="rodape_atendimento flex-column">
+                <div id="div_quebra" class="rodape_tamanho_atendimento"></div>
+                <div class="rodape_atendimento_alinhamento align-items-center rodape_tamanho_atendimento">
+                    <span class="txt_branco_xl">E-mails</span>
+                </div>
+                <div class="rodape_atendimento_alinhamento align-items-center rodape_tamanho_atendimento">
+                    <span class="txt_branco_sm">vendas@gamemania.com.br</span>
+                </div>
+                <div class="rodape_atendimento_alinhamento align-items-center rodape_tamanho_atendimento">
+                    <span class="txt_branco_sm">suporte@gamemania.com.br</span>
+                </div>
+                <div class="rodape_atendimento_alinhamento"></div>
+            </div>
+            <div class="rodape_atendimento rodape_game_mania justify-content-center flex-column">
+               <div id="div_quebra" class="justify-content-center align-items-center h-25 w-100"></div>
+               <div class="justify-content-center align-items-center h-25 w-100">
+                    <span class="justify-content-center align-items-center txt_branco_xl">Game Mania</span>
+               </div>
+               <div class="justify-content-center align-items-center h-25 w-100">
+                    <span class="justify-content-center align-items-center txt_branco_sm">Todos direitos reservados</span>
+               </div>
+               <div class="justify-content-center align-items-center h-25 w-100"></div>
+            </div>
+            <div id="div_quebra" class="rodape_atendimento"></div>
+            <div class="rodape_atendimento rodape_botoes">
+                <img class="botoes_naveg" src="images/whatsapp.png" alt="">
+                <img class="botoes_naveg" src="images/instagram.png" alt="">
+                <img class="botoes_naveg" src="images/facebook.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- RODAPE FIM -->
+    <script src="js/script.js"></script>
+</body>
+</html>
