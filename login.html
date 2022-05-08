@@ -7,7 +7,7 @@
     <title>Login - Game Mania</title>
     <link rel="icon" href="images/Logo Game Mania 2.png" type="image/png" size="16x16">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -23,20 +23,42 @@
     <header class="container">
         <div class="row cabecalho">
             <div class="col-3 left">
-                PESQUISA
             </div>
             <div class="col-6 center">
                <a href="index.html"><img id="img_logo" src="images/Logo Game Mania 2.png" alt="Logotipo da aplicação Game Mania"></a>
             </div>
             <div class="col-3 right">
                 <a href="index.html"><img class="botoes_naveg" src="images/Botao Home.png" alt=""></a>
-                <img class="botoes_naveg" src="images/Botao Carrinho.png" alt="">
             </div>
         </div>
     </header>
     <!-- HEADER FIM -->
 
-    <section id="carProdutos_01_01" class="container produto">
+    <section class="container login">
+        <form id="formLogin" class="container formulario" action="">
+              <div class="form-group" style="height:40px;"></div>
+              <div class="d-flex form-group justify-content-center" style="height:40px;"><h5>Login do Cliente</h5></div>
+              <div class="d-flex form-group" style="height:50px;"><p>Tenha acesso aos seus pedidos de forma mais fácil</p></div>
+              <div class="d-flex form-group" style="height:10px;"><span id="msgErro"><span></div>
+              <div class="d-flex form-group" style="height:10px;"></div>
+              <div class="form-group">
+                <label for="lblEmail">E-mail:</label>
+                <input type="email" class="form-control" id="edtEmail" aria-describedby="emailHelp" placeholder="Ex. carlossilva@gmail.com">
+              </div>
+              <div class="form-group" style="height:20px;"></div>
+              <div class="form-group">
+                <label for="lblSenha">Senha:</label>
+                <input type="password" class="form-control" id="edtSenha" placeholder="">
+                <a href="#"><h6>Esqueci minha senha</h6></a>
+              </div>
+              <div class="form-group" style="height:20px;"></div>
+              <div class="d-flex justify-content-center">
+                <button type="button" onclick="envLogin()" class="btn btn-primary">Entrar</button>
+              </div>
+              <div class="form-group" style="height:20px;"></div>
+              <div class="form-group" style="height:20px;"><p style="text-align:left;">Não tem cadastro?</p></div>
+              <div class="form-group" style="height:20px;"><a href="#"><h6>Cadastre-se</h6></a></div>
+        </form>
     </section>    
 
     <!-- RODAPE INICIO -->
@@ -85,5 +107,6 @@
         </div>
     </section>
     <!-- RODAPE FIM -->
+    <script src="js/script.js"></script>
 </body>
 </html>
