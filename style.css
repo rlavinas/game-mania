@@ -543,6 +543,10 @@ h6 {
         background-color: #021C33;
     }
 
+    .div_menubar_exibe {
+        display: flex!important;
+    }
+
     #div_navbar a {
         margin: 0px;
     }
@@ -552,7 +556,7 @@ h6 {
     }
 
     #navbar {
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center!important;
         width: 100%;

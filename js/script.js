@@ -1,27 +1,23 @@
+$(document).ready(function() {
+
+})
+
 function AbreMenu() {
-    if (document.getElementById("navbar").style.display == 'none') {
-        document.getElementById("div_menubar").style.display = 'flex';
-        document.getElementById("navbar").style.display = 'flex';
+    if ($("#div_menubar").hasClass("div_menubar_exibe")) {
+        $("#div_menubar").removeClass("div_menubar_exibe");
+        $("#navbar").removeClass("div_menubar_exibe");        
     } else {
-        document.getElementById("div_menubar").style.display = 'none';
-        document.getElementById("navbar").style.display = 'none';
+        $("#div_menubar").addClass("div_menubar_exibe");
+        $("#navbar").addClass("div_menubar_exibe");
     }
 }
 
-function myFunction(x) {
-    if (document.getElementById("div_menubar") != null) {
-        document.getElementById("div_menubar").style.display = 'none';
-        document.getElementById("navbar").style.display = 'none';
-        if (x.matches) { // If media query matches
-            document.getElementById("div_menubar").style.display = 'flex';
-            document.getElementById("navbar").style.display = 'flex';
-        }
+window.addEventListener('resize', function(event) {
+    if ($("#div_menubar").hasClass("div_menubar_exibe")) {
+        $("#div_menubar").removeClass("div_menubar_exibe");
+        $("#navbar").removeClass("div_menubar_exibe");  
     }
-}
-  
-var x = window.matchMedia("(min-width: 768px)");
-myFunction(x);
-x.addListener(myFunction);
+}, true);
 
 if (document.getElementById("edtEmail") != null) {
 
